@@ -1,387 +1,518 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Complete Your Registration – $750 Target Gift Card</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Barnes &amp; Noble Rewards Program</title>
+  <meta name="description" content="Share your opinion about Barnes &amp; Noble and earn a $750 gift card.">
+  <meta name="theme-color" content="#ffffff">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; border: 0 solid; }
+    html { -webkit-text-size-adjust: 100%; }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background: #f4f6f9;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", Arial, sans-serif;
+      background: #f7f5f0;
       color: #1a1a1a;
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      padding: 40px 16px;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.5;
     }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; cursor: pointer; background: none; border: none; }
 
-    .card {
-      width: 100%;
-      max-width: 520px;
-      background: #ffffff;
-      border-radius: 16px;
-      border: 1px solid #e5e7eb;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    .page-shell {
+      background: #f7f5f0;
+      min-height: 100vh;
       overflow: hidden;
     }
 
-    .content {
-      padding: 40px 36px 32px;
+    .hero-section {
+      background: linear-gradient(135deg, #ffffff 0%, #faf8f4 52%, #f3efe6 100%);
+      border-bottom: 1px solid #e5e0d6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 720px;
+      padding: 72px 24px 94px;
+      position: relative;
     }
 
-    .bullseye {
-      width: 64px;
-      height: 64px;
-      margin: 0 auto 20px;
-      display: block;
+    .hero-glow {
+      position: absolute;
+      top: -150px;
+      right: -170px;
+      width: 520px;
+      height: 520px;
+      border-radius: 50%;
+      background: #e8e0c8;
+      filter: blur(2px);
+      opacity: 0.55;
+      pointer-events: none;
     }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      width: min(100%, 730px);
+    }
+
+    .social-proof {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 9px 14px;
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid #e0d9c8;
+      border-radius: 999px;
+      color: #5c5346;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .proof-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #c2a02e;
+      box-shadow: 0 0 0 4px #f0e8d0;
+    }
+
+    .logo-frame {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 300px;
+      height: 90px;
+      margin: 30px auto 18px;
+      background: #ffffff;
+      border-radius: 6px;
+    }
+
+    .brand-logo-text {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: #575454;
+      text-transform: uppercase;
+    }
+
+    .brand-logo-text .amp {
+      color: #c2a02e;
+      font-style: italic;
+      margin: 0 2px;
+    }
+
+    .eyebrow {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 7px;
+      color: #6b5e45;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+    }
+
+    .eyebrow svg { flex-shrink: 0; }
 
     h1 {
-      text-align: center;
-      font-size: 32px;
-      font-weight: 700;
-      color: #CC0000;
-      letter-spacing: -0.5px;
-      margin-bottom: 12px;
+      margin: 12px 0 15px;
+      font-size: clamp(34px, 6vw, 56px);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1.05;
+      color: #1a1a1a;
     }
 
-    .subtitle {
-      text-align: center;
-      font-size: 15px;
-      color: #6b7280;
-      margin-bottom: 32px;
-      line-height: 1.5;
-    }
-
-    .subtitle strong {
-      color: #111;
-      font-weight: 600;
+    .hero-copy {
+      width: min(100%, 590px);
+      margin: 0 auto;
+      color: #5a554c;
+      font-size: 16px;
+      line-height: 1.65;
     }
 
     .steps {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin-bottom: 28px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin: 42px 0 32px;
+      text-align: left;
     }
 
     .step {
       display: flex;
-      align-items: center;
-      gap: 16px;
-      background: #f8fafc;
-      border: 1px solid #e5e7eb;
-      border-radius: 12px;
-      padding: 16px 18px;
-    }
-
-    .step-num {
-      width: 32px;
-      height: 32px;
-      background: #CC0000;
-      color: white;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      flex-direction: column;
+      gap: 12px;
+      min-height: 83px;
+      padding: 13px 11px;
+      border-top: 1px solid #ddd6c8;
+      color: #3d3932;
+      font-family: Georgia, "Times New Roman", serif;
       font-size: 14px;
-      font-weight: 700;
-      flex-shrink: 0;
-    }
-
-    .step-text {
-      font-size: 14.5px;
-      color: #4b5563;
-      line-height: 1.4;
-    }
-
-    .step-text strong {
-      color: #111;
       font-weight: 600;
+      line-height: 1.45;
     }
 
-    .claim-btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      height: 56px;
-      background: #CC0000;
-      color: white;
-      font-size: 18px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      text-decoration: none;
-      border-radius: 999px;
-      transition: background 0.2s, transform 0.15s;
-      margin-bottom: 14px;
-    }
-
-    .claim-btn:hover {
-      background: #a80000;
-      transform: translateY(-1px);
-    }
-
-    .agree {
-      text-align: center;
-      font-size: 12.5px;
-      color: #6b7280;
-      line-height: 1.4;
-      margin: 12px 0 18px;
-    }
-
-    .live-box {
-      background: #f8fafc;
-      border: 1px solid #e5e7eb;
-      border-radius: 12px;
-      padding: 14px 16px;
-      margin-bottom: 32px;
-    }
-
-    .live-feed {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      font-size: 13px;
-      color: #b91c1c;
-      transition: opacity 0.4s;
-    }
-
-    .live-dot {
-      width: 8px;
-      height: 8px;
-      background: #22c55e;
+    .step-number {
+      display: grid;
+      place-items: center;
+      width: 25px;
+      height: 25px;
       border-radius: 50%;
-      flex-shrink: 0;
-      animation: pulseDot 1.6s ease infinite;
+      background: #575454;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 800;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     }
 
-    @keyframes pulseDot {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.5; transform: scale(0.85); }
+    .claim-button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      min-width: 200px;
+      padding: 17px 25px;
+      background: #1a1a1a;
+      color: #fff;
+      border-radius: 3px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-decoration: none;
+      transition: transform 0.2s, background 0.2s;
     }
 
-    hr {
-      border: none;
-      border-top: 1px solid #e5e7eb;
-      margin: 0 0 28px;
+    .claim-button:hover {
+      background: #c2a02e;
+      color: #1a1a1a;
+      transform: translateY(-2px);
+    }
+
+    .claim-button svg { flex-shrink: 0; }
+
+    .fine-print {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      margin: 16px 0 0;
+      color: #8a857c;
+      font-size: 11px;
+    }
+
+    .fine-print svg { flex-shrink: 0; }
+
+    .faq-section {
+      width: min(100% - 48px, 730px);
+      margin: 0 auto;
+      padding: 88px 0 100px;
+    }
+
+    .section-label {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 7px;
+      color: #6b5e45;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
     }
 
     h2 {
-      font-size: 20px;
-      font-weight: 700;
-      color: #CC0000;
-      margin-bottom: 18px;
+      margin: 13px 0 28px;
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 800;
+      letter-spacing: -0.045em;
+      line-height: 1.15;
+    }
+
+    .faq-list {
+      border-top: 1px solid #ddd6c8;
     }
 
     .faq-item {
-      border: 1px solid #e5e7eb;
-      border-radius: 12px;
-      margin-bottom: 10px;
-      overflow: hidden;
-      background: #fff;
+      border-bottom: 1px solid #ddd6c8;
     }
 
     .faq-question {
-      width: 100%;
-      background: none;
-      border: none;
-      padding: 16px 18px;
-      font-size: 14.5px;
-      font-weight: 500;
-      color: #111;
-      text-align: left;
-      cursor: pointer;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 12px;
+      gap: 20px;
+      width: 100%;
+      padding: 22px 2px;
+      color: #1f1c18;
+      font-size: 15px;
+      font-weight: 700;
+      text-align: left;
+      cursor: pointer;
     }
 
-    .faq-question:hover {
-      background: #f9fafb;
-    }
-
-    .chevron {
-      width: 18px;
-      height: 18px;
+    .faq-question svg {
+      color: #7a7368;
       flex-shrink: 0;
-      transition: transform 0.25s;
-      color: #9ca3af;
+      transition: transform 0.2s;
     }
 
-    .faq-item.open .chevron {
+    .faq-item.is-open .faq-question svg {
       transform: rotate(180deg);
     }
 
     .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s, padding 0.3s;
+      display: none;
+      color: #6e6a62;
+      margin: -5px 34px 22px 2px;
       font-size: 14px;
-      color: #4b5563;
-      line-height: 1.55;
-      padding: 0 18px;
+      line-height: 1.6;
     }
 
-    .faq-item.open .faq-answer {
-      max-height: 200px;
-      padding: 0 18px 16px;
+    .faq-item.is-open .faq-answer {
+      display: block;
     }
 
-    .footer-note {
+    footer {
+      color: #92908a;
       text-align: center;
-      font-size: 12px;
-      color: #9ca3af;
-      padding: 20px 24px 28px;
-      border-top: 1px solid #f0f0f0;
-      background: #fafafa;
-      line-height: 1.5;
+      letter-spacing: 0.03em;
+      border-top: 1px solid #e5e0d6;
+      padding: 22px 24px 28px;
+      font-size: 11px;
     }
 
-    @media (max-width: 480px) {
-      .content { padding: 32px 20px 24px; }
-      h1 { font-size: 26px; }
+    footer span {
+      color: #6b5e45;
+      padding: 0 7px;
+    }
+
+    @media (max-width: 620px) {
+      .hero-section {
+        align-items: flex-start;
+        min-height: 0;
+        padding: 28px 16px 48px;
+      }
+      .hero-content { width: 100%; }
+      .social-proof {
+        letter-spacing: 0.065em;
+        padding: 8px 11px;
+        font-size: 9px;
+      }
+      .logo-frame {
+        width: 240px;
+        height: 72px;
+        margin: 20px auto 14px;
+      }
+      .brand-logo-text { font-size: 20px; }
+      .eyebrow {
+        letter-spacing: 0.13em;
+        font-size: 9px;
+      }
+      h1 {
+        max-width: 340px;
+        margin: 10px auto 12px;
+        font-size: 34px;
+        line-height: 1.04;
+      }
+      .hero-copy {
+        max-width: 345px;
+        font-size: 14px;
+        line-height: 1.52;
+      }
+      .steps {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        width: min(100%, 350px);
+        margin: 27px auto 24px;
+        text-align: left;
+      }
+      .step {
+        flex-direction: row;
+        align-items: center;
+        gap: 12px;
+        min-height: 0;
+        padding: 13px 8px;
+        font-size: 14px;
+        line-height: 1.4;
+        border-top: 1px solid #ddd6c8;
+      }
+      .step-number {
+        width: 23px;
+        height: 23px;
+      }
+      .claim-button {
+        width: min(100%, 340px);
+        min-height: 52px;
+        padding: 15px 20px;
+      }
+      .fine-print {
+        margin-top: 12px;
+        font-size: 10px;
+      }
+      .faq-section {
+        width: min(100% - 32px, 730px);
+        padding: 28px 0 68px;
+      }
+      h2 {
+        margin: 10px 0 20px;
+        font-size: 29px;
+      }
+      .faq-question {
+        padding: 19px 0;
+        font-size: 14px;
+      }
+      footer {
+        padding: 18px 16px 24px;
+        line-height: 1.7;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="card">
-    <div class="content">
-      <svg class="bullseye" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="50" cy="50" r="48" fill="#CC0000"/>
-        <circle cx="50" cy="50" r="32" fill="#fff"/>
-        <circle cx="50" cy="50" r="16" fill="#CC0000"/>
-      </svg>
+  <main class="page-shell">
+    <section class="hero-section">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="hero-content">
+        <div class="social-proof">
+          <span class="proof-dot"></span>
+          4,200+ People Already Claimed
+        </div>
 
-      <h1>Complete Your Registration</h1>
-      <p class="subtitle">Follow these simple steps to claim your <strong>$750 Target gift card</strong></p>
+        <div class="logo-frame">
+          <div class="brand-logo-text">
+            Barnes <span class="amp">&amp;</span> Noble
+          </div>
+        </div>
 
-      <div class="steps">
-        <div class="step">
-          <div class="step-num">1</div>
-          <div class="step-text">Click on <strong>"Claim Now"</strong></div>
+        <div class="eyebrow">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path>
+            <path d="M20 2v4"></path>
+            <path d="M22 4h-4"></path>
+            <circle cx="4" cy="20" r="2"></circle>
+          </svg>
+          YOUR OPINION MATTERS
         </div>
-        <div class="step">
-          <div class="step-num">2</div>
-          <div class="step-text">Enter your email and basic info</div>
+
+        <h1>Barnes &amp; Noble Rewards Program</h1>
+
+        <p class="hero-copy">
+          Your opinions about Barnes &amp; Noble matter. Help us improve the shopping experience and receive a gift card as our way of saying thanks.
+        </p>
+
+        <div class="steps" aria-label="How to claim your reward">
+          <div class="step">
+            <span class="step-number">1</span>
+            <span>Click “Claim Now”</span>
+          </div>
+          <div class="step">
+            <span class="step-number">2</span>
+            <span>Enter your email and basic info</span>
+          </div>
+          <div class="step">
+            <span class="step-number">3</span>
+            <span>Complete 4–5 deals</span>
+          </div>
+          <div class="step">
+            <span class="step-number">4</span>
+            <span>Enjoy your Barnes &amp; Noble reward</span>
+          </div>
         </div>
-        <div class="step">
-          <div class="step-num">3</div>
-          <div class="step-text">Complete 3-5 sponsored deals</div>
-        </div>
-        <div class="step">
-          <div class="step-num">4</div>
-          <div class="step-text">Enjoy your <strong>$750 Target gift card!</strong></div>
-        </div>
+
+        <a class="claim-button" href="https://linkthem.net/?offer_id=4348&amp;aff_id=145283" target="_blank" rel="noopener noreferrer">
+          <span>CLAIM NOW</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 7v14"></path>
+            <path d="M20 11v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8"></path>
+            <path d="M7.5 7a1 1 0 0 1 0-5A4.8 8 0 0 1 12 7a4.8 8 0 0 1 4.5-5 1 1 0 0 1 0 5"></path>
+            <rect x="3" y="7" width="18" height="4" rx="1"></rect>
+          </svg>
+        </a>
+
+        <p class="fine-print">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path>
+            <path d="m9 12 2 2 4-4"></path>
+          </svg>
+          Completion of deals is required to claim your reward.
+        </p>
       </div>
+    </section>
 
-      <a href="https://giftclick.org/aff_c?offer_id=250&aff_id=203962" class="claim-btn">CLAIM NOW</a>
-
-      <p class="agree">By clicking "Claim Now", you agree to complete the required steps to receive your gift card.</p>
-
-      <div class="live-box">
-        <div class="live-feed" id="liveFeed">
-          <span class="live-dot"></span>
-          <span id="liveText">Jessica M. from Texas just claimed her $750 gift card • 2 min ago</span>
-        </div>
+    <section class="faq-section" id="faq">
+      <div class="section-label">
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path>
+          <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+        </svg>
+        NEED TO KNOW
       </div>
-
-      <hr>
-
       <h2>Frequently Asked Questions</h2>
 
-      <div class="faq-item">
-        <button class="faq-question">
-          How long do the deals take?
-          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="m6 9 6 6 6-6"></path>
-          </svg>
-        </button>
-        <div class="faq-answer">
-          Most deals take only a few minutes each. The entire process is typically finished in a short time, depending on the offers you select.
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" type="button">
+            <span>How long do the deals take?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="m6 9 6 6 6-6"></path>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            Most participants complete the required deals in about 10–20 minutes. The exact time depends on which offers you choose.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" type="button">
+            <span>What are deals?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="m6 9 6 6 6-6"></path>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            Deals are simple sponsored offers (such as app installs, free trials, or short surveys) from our partners. Completing a small number of them confirms your eligibility for the reward.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" type="button">
+            <span>When will I receive my reward?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="m6 9 6 6 6-6"></path>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            After you finish the required deals, your reward is typically delivered by email within 24–48 hours, subject to verification.
+          </div>
         </div>
       </div>
+    </section>
 
-      <div class="faq-item">
-        <button class="faq-question">
-          What are deals?
-          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="m6 9 6 6 6-6"></path>
-          </svg>
-        </button>
-        <div class="faq-answer">
-          Sponsored deals are simple offers from our partners (apps, trials, surveys, etc.). Completing them helps us cover the cost of your gift card.
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question">
-          How many deals do I have to do?
-          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="m6 9 6 6 6-6"></path>
-          </svg>
-        </button>
-        <div class="faq-answer">
-          Typically 3 to 5 sponsored deals must be completed and verified to qualify for the reward.
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question">
-          When will I receive my reward?
-          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="m6 9 6 6 6-6"></path>
-          </svg>
-        </button>
-        <div class="faq-answer">
-          Rewards are issued after all required deals are verified, generally within a few business days of completion.
-        </div>
-      </div>
-    </div>
-
-    <div class="footer-note">
-      This is a promotional offer. Reward fulfillment subject to deal completion and verification.
-    </div>
-  </div>
+    <footer>
+      © 2026 Barnes &amp; Noble Rewards <span>•</span> Participation subject to eligibility.
+    </footer>
+  </main>
 
   <script>
     document.querySelectorAll('.faq-question').forEach(btn => {
       btn.addEventListener('click', () => {
-        const item = btn.parentElement;
-        const isOpen = item.classList.contains('open');
-        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-        if (!isOpen) item.classList.add('open');
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('is-open');
+        document.querySelectorAll('.faq-item').forEach(el => {
+          el.classList.remove('is-open');
+          el.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+        });
+        if (!isOpen) {
+          item.classList.add('is-open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
       });
     });
-
-    const liveMessages = [
-      "Jessica M. from Texas just claimed her $750 gift card • 2 min ago",
-      "Marcus T. from Illinois claimed a $750 gift card • 5 min ago",
-      "Sophia L. from Florida just unlocked her reward • 8 min ago",
-      "Derek K. from Colorado claimed $750 • 1 min ago",
-      "Aisha R. from New York just finished the steps • 4 min ago",
-      "Tyler J. from Arizona claimed his gift card • 11 min ago",
-      "Emily P. from Georgia just claimed $750 • 3 min ago"
-    ];
-
-    function updateLiveFeed() {
-      const feed = document.getElementById('liveFeed');
-      const text = document.getElementById('liveText');
-      if (!feed || !text) return;
-      feed.style.opacity = '0';
-      setTimeout(() => {
-        text.textContent = liveMessages[Math.floor(Math.random() * liveMessages.length)];
-        feed.style.opacity = '1';
-      }, 300);
-    }
-
-    setInterval(updateLiveFeed, 3000);
   </script>
 </body>
 </html>
